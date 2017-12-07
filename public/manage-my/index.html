@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!-- 登陆页左侧 -->
+    <div id="login-aside">
+        <div class="aside-header">
+            <a href="./index.html">ITCAST</a>
+        </div>
+        <div class="aside-main">
+            <div class="main-top">
+                <img src="./image/default.png" alt="">
+                <span>超级管理员</span>
+            </div>
+            <ul>
+                <li class="active">
+                    <a href="javascript:void(0)">
+                        <span class="glyphicon glyphicon-user"></span>用户管理</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <span class="glyphicon glyphicon-list"></span>分类管理</a>
+                    <ol>
+                        <li>
+                            <a href="javascript:void(0)">一级分类</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">二级分类</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <span class="glyphicon glyphicon-tags"></span>商品管理</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 登录页主体 -->
+    <div id="login-main">
+        <div class="main-header">
+            <p class="header-left glyphicon glyphicon-align-justify pull-left"></p>
+            <a class="header-right glyphicon glyphicon-share pull-right">
+            </a>
+        </div>
+        <div class="main-body clearfix">
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">系统管理</a>
+                    </li>
+                    <li>首页</li>
+                </ol>
+
+            <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+            <div id="main-left" class=" pull-left" style="width: 500px;height:400px;"></div>
+            <div id="main-right" class=" pull-right" style="width: 500px;height:400px;"></div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+<script src="./lib/jquery/jquery.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.js"></script>
+<script src="./lib/echarts/echarts.min.js"></script>
+<script src="./js/index.js"></script>

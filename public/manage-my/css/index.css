@@ -1,0 +1,85 @@
+html,body{
+    height: 100%;
+}
+#login-aside{
+    width: 180px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: #222d32;
+    top: 0;
+}
+#login-aside .aside-header{
+    height: 50px;
+    width: 180px;
+    background-color: #367fa9;
+    text-align: center;
+}
+#login-aside .aside-header a{
+    font-size: 20px;
+    color: #fff;
+    line-height: 50px;
+    font-weight: 700;
+}
+
+.aside-main .main-top{
+    padding: 30px 20px;
+    width: 180px;
+}
+.aside-main .main-top img{
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+}
+.aside-main .main-top span{
+    line-height: 55px;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.aside-main ul{
+    padding: 20px 0;
+}
+.aside-main ul li{
+    line-height: 30px;
+    border: 4px solid transparent;
+    padding-left: 30px;
+}
+.aside-main ul li.active{
+    border-left-color:yellowgreen; 
+    background-color: black;
+}
+.aside-main ul li.active a{
+    color: #fff;
+}
+.aside-main ul li a{
+    color: gray;
+}
+.aside-main ul li a span {
+    margin-right: 5px;
+}
+.aside-main ul ol li{
+    line-height: 30px;
+    padding-left: 20px;
+    font-size: 12px;
+}
+
+/* 登录主页部分 */
+#login-main{
+    padding-left: 180px;
+    height: 100%;
+}
+#login-main .main-header{
+    height: 50px;
+    background-color: #3c8dbc;
+    padding: 0 20px;
+    font-size: 18px;
+}
+#login-main .main-header a,#login-main .main-header p{
+    line-height: 50px;
+    color: #fff;
+}
+#login-main .main-body{
+    padding: 30px 20px 0;
+}
