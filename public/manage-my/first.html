@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!-- 登陆页左侧 -->
+    <div id="login-aside">
+        <div class="aside-header">
+            <a href="./index.html">ITCAST</a>
+        </div>
+        <div class="aside-main">
+            <div class="main-top">
+                <img src="./image/default.png" alt="">
+                <span>超级管理员</span>
+            </div>
+            <ul>
+                <li>
+                    <a href="user.html">
+                        <span class="glyphicon glyphicon-user"></span>用户管理</a>
+                </li>
+                <li class="active">
+                    <a href="javascript:void(0)">
+                        <span class="glyphicon glyphicon-list"></span>分类管理</a>
+                    <ol>
+                        <li>
+                            <a style="color:white;" href="first.html">一级分类</a>
+                        </li>
+                        <li>
+                            <a href="second.html">二级分类</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="goods.html">
+                        <span class="glyphicon glyphicon-tags"></span>商品管理</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 登录页主体 -->
+    <div id="login-main">
+        <div class="main-header">
+            <a class="header-left glyphicon glyphicon-align-justify pull-left"></a>
+            <a class="header-right glyphicon glyphicon-share pull-right">
+            </a>
+        </div>
+        <div class="main-body clearfix">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">系统管理</a>
+                </li>
+                <li>分类管理</li>
+                <li>一级分类</li>
+            </ol>
+
+            <button class="btn btn-default mb-20" data-toggle="modal" data-target=".motaikuang">添加分类</button>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>分类名称</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>男士精品</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 分页控件 -->
+            <ul id='pagintor'></ul>
+        </div>
+    </div>
+
+
+        <!-- 模态框 -->
+        <!-- 新增modal -->
+        <div class="modal fade motaikuang" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">添加分类</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="firstForm">
+                            <div class="form-group">
+                                <input type="text" name="categoryName" class="form-control" id="exampleInputEmail1" placeholder="请输入一级分类名称">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <!-- 关联form  form属性 跟 form的 id 相关联即可-->
+                        <button type="submit" form="firstForm" class="btn btn-primary">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            <!-- 模态框 -->
+    <div class="modal fade modal-tuichu" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">温馨提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-danger">
+                            <i class="glyphicon glyphicon-info-sign"></i>你确定要退出吗？</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-danger">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
+<script src="./lib/jquery/jquery.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.js"></script>
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="./lib/artTemplate/template.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script type="text/html" id="first-tem">
+    {{each rows}}
+    <tr>
+        <td>{{(page-1)*size+$index+1}}</td>
+        <td>{{$value.categoryName}}</td>
+    </tr>
+    {{/each}}
+</script>
+<script src="./js/common.js"></script>
+<script src="./js/first.js"></script>

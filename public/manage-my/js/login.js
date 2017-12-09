@@ -87,10 +87,10 @@ $(function () {
                     validator.updateStatus('password', 'INVALID', 'callback')
                 }
             }
-            setTimeout(function(){
+            // setTimeout(function(){
                 //关闭进度条
                 NProgress.done();
-            }, 1000);
+            // }, 1000);
         }
     })
 });

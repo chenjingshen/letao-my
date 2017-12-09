@@ -23,14 +23,14 @@
                 <span>超级管理员</span>
             </div>
             <ul>
-                <li>
+                <li class="active">
                     <a href="user.html">
                         <span class="glyphicon glyphicon-user"></span>用户管理</a>
                 </li>
                 <li>
                     <a href="javascript:void(0)">
                         <span class="glyphicon glyphicon-list"></span>分类管理</a>
-                    <ol style="display:none;">
+                    <ol>
                         <li>
                             <a href="first.html">一级分类</a>
                         </li>
@@ -59,12 +59,33 @@
                 <li>
                     <a href="#">系统管理</a>
                 </li>
-                <li>首页</li>
+                <li>用户管理</li>
             </ol>
-
-            <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-            <div id="main-left" class=" pull-left" style="width: 500px;height:400px;"></div>
-            <div id="main-right" class=" pull-right" style="width: 500px;height:400px;"></div>
+            <div class="bs-example" data-example-id="bordered-table">
+                <table class="table table-bordered table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>用户名</th>
+                            <th>手机号</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>itcast</td>
+                            <td>18888888888</td>
+                            <td>正常</td>
+                            <td>
+                                <button class="btn btn-danger">禁用</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul id="pagintor"></ul>
+            </div>
         </div>
     </div>
 
@@ -80,11 +101,12 @@
                     <h4 class="modal-title">温馨提示</h4>
                 </div>
                 <div class="modal-body">
-                    <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>你确定要退出吗？</p>
+                    <p class="text-danger">
+                        <i class="glyphicon glyphicon-info-sign"></i>你确定要退出吗？</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="submit" class="btn btn-danger">确定</button>
+                    <button type="button" class="btn btn-danger">确定</button>
                 </div>
             </div>
         </div>
@@ -97,5 +119,29 @@
 <script src="./lib/jquery/jquery.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.js"></script>
 <script src="./lib/echarts/echarts.min.js"></script>
+<script src="./lib/artTemplate/template.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script type="text/html" id="user-tem">
+    {{each rows}}
+    <tr>
+        <th scope="row">{{(page-1)*size+$index+1}}</th>
+        <td>{{$value.username}}</td>
+        <td>{{$value.mobile}}</td>
+        <td>{{if $value.isDelete==1}}
+            正常
+            {{else}}
+            已禁用
+            {{/if}}
+        </td>
+        <td data-id="{{$value.id}}">
+            {{if $value.isDelete==1}}
+            <button class="btn btn-danger">禁用</button>
+            {{else}}
+            <button class="btn btn-primary">启用</button>
+            {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</script>
 <script src="./js/common.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/user.js"></script>
