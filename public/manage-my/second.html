@@ -103,11 +103,11 @@
                 <div class="modal-body">
                     <form id="firstForm">
                         <div class="form-group">
-                            <label for="exampleInputEmail1" class="pull-left">一级分类：&nbsp&nbsp</label>
-                            <div class="dropdown pull-left">
-                                <button class="btn btn-default dropdown-toggle mb-20" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                            <div class="dropdown">
+                                <span>一级分类：</span>
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="true">
-                                    选择
+                                    请选择
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -124,13 +124,16 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="请输入二级分类名称">
+                            <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类名称">
                         </div>
                         <div class="form-group">
-                            <input type="file" class='btn btn-default' value='上传图片'>
+                            <input style="border:0;padding:0;opacity:0;position:absolute;" type="file" class='btn btn-default' value='上传图片' name="pic1" data-url="/category/addSecondCategoryPic" id="fileUpload">
+                            <a class='btn btn-default' href="javascript:void(0)"><span class="glyphicon glyphicon-picture"></span>上传图片</a>
                         </div>
                         <div class="form-group">
-                            <img style="width:100px;height:100px;" src="./images/none.png" alt="">
+                            <img src="./image/none.png" style="width:100px;height:100px;" alt="">
+                            <!-- 用来保存图片路径 -->
+                            <input type="text" name="brandLogo" hidden>
                         </div>
                     </form>
                 </div>
@@ -181,7 +184,7 @@
         <td>{{$value.categoryName}}</td>
         <td>{{$value.brandName}}</td>
         <td>
-            <img style='width:80px;' src="{{$value.brandLogo}}" alt="">
+            <img style='height:50px;' src="{{$value.brandLogo}}" alt="">
         </td>
     </tr>
     {{/each}}
@@ -190,5 +193,7 @@
 <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 <script src="./lib/echarts/echarts.min.js"></script>
+<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/second.js"></script>

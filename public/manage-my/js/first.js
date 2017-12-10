@@ -1,24 +1,21 @@
 $(function () {
-    var page = 1;
+    var pagenum = 1;
     var pageSize = 5;
 
     function getdata() {
         // 页面打开，获取页面数据
-        $.get('/category/queryTopCategoryPaging', {
-            page: page,
-            pageSize: pageSize
-        }, function (backdata) {
-            console.log(backdata);
+        $.get('/category/queryTopCategoryPaging', {page: pagenum,pageSize: pageSize}, function (backdata) {
+            // console.log(backdata);
             $('tbody').html(template('first-tem', backdata));
             // 分页
             $("#pagintor").bootstrapPaginator({
                 bootstrapMajorVersion: 3, //默认是2，如果是bootstrap3版本，这个参数必填
-                currentPage: page, //当前页
+                currentPage: pagenum, //当前页
                 totalPages: Math.ceil(backdata.total / backdata.size), //总页数
                 size: "small", //设置控件的大小，mini, small, normal,large
                 onPageClicked: function (event, originalEvent, type, page) {
                     //为按钮绑定点击事件 page:当前点击的按钮值
-                    page = page;
+                    pagenum = page;
                     //重新获取数据
                     getdata();
                 }
@@ -59,6 +56,7 @@ $(function () {
         success: function (backdata) {
             console.log(backdata);
             $('.motaikuang').modal('hide');
+            $('form input').val('');
             // 重新获取当前页数据
             getdata();
         }

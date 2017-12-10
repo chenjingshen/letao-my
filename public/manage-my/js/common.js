@@ -15,10 +15,10 @@ $(function(){
 
 
     // 弹出模态框
-    $('a.glyphicon-share').click(function(){
+    $('.glyphicon-share').click(function(){
         $('.modal-tuichu').modal('show')
     })
-    $('button.btn-danger').click(function(){
+    $('.modal-tuichu .btn-danger').click(function(){
         $('.modal-tuichu').modal('hide');
         // 调用登出接口
         $.get('/employee/employeeLogout',function(backdata){

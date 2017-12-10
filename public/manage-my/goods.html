@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>首页</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
@@ -64,15 +65,42 @@
                 </li>
             </ol>
 
-            <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-            <div id="main-left" class=" pull-left" style="width: 500px;height:400px;"></div>
-            <div id="main-right" class=" pull-right" style="width: 500px;height:400px;"></div>
+            <button class="btn btn-default mb-20" data-toggle="modal" data-target=".modal-add">添加商品</button>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>商品名称</th>
+                        <th>商品描述</th>
+                        <th>商品库存</th>
+                        <th>商品尺寸</th>
+                        <th>商品状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>商品名称</td>
+                        <td>商品描述</td>
+                        <td>商品库存</td>
+                        <td>商品尺寸</td>
+                        <td>商品状态</td>
+                        <td>
+                            <button class="btn btn-danger">下架</button>
+                            <button class="btn btn-primary">编辑</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 分页控件 -->
+            <ul id='pagination'></ul>
         </div>
     </div>
 
 
     <!-- 模态框 -->
-    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal fade modal-tuichu" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -82,7 +110,8 @@
                     <h4 class="modal-title">温馨提示</h4>
                 </div>
                 <div class="modal-body">
-                    <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>你确定要退出吗？</p>
+                    <p class="text-danger">
+                        <i class="glyphicon glyphicon-info-sign"></i>你确定要退出吗？</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -91,6 +120,56 @@
             </div>
         </div>
     </div>
+    
+
+    <!-- 新增模态框 -->
+    <div class="modal fade modal-add " tabindex="-1" role="dialog">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">新增商品</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- 表单 -->
+                    <form id="form">
+                        <div class="form-group">
+                            <input name="proName" type="text" class="form-control" placeholder="请输入商品名称">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="proDesc"  class="form-control" rows="3" placeholder="请输入商品描述"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input name="num" type="text" class="form-control" placeholder="请输入商品库存">
+                        </div>
+                        <div class="form-group">
+                            <input name="price" type="text" class="form-control" placeholder="请输入商品价格">
+                        </div>
+                        <div class="form-group">
+                            <input name="oldPrice" type="text" class="form-control" placeholder="请输入商品名原价">
+                        </div>
+                        <div class="form-group">
+                            <input name="size" type="text" class="form-control" placeholder="请输入商品尺码">
+                        </div>
+                        <div class="form-group">
+                            <input style="border:0;padding:0;opacity:0;position:absolute;" id="fileUpload" type="file" class="form-control" name="pic1" data-url="/product/addProductPic" >
+                            <a class="btn btn-default" href="javascript:void(0)">上传图片</a>
+                            <span>提示:必须上传三个图片</span>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" form="form" class="btn btn-danger">确定</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
 
 
 </body>
@@ -98,6 +177,28 @@
 </html>
 <script src="./lib/jquery/jquery.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.js"></script>
-<script src="./lib/echarts/echarts.min.js"></script>
+<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
+<!-- 分页 -->
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<!-- 表单验证 -->
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="./lib/artTemplate/template.js"></script>
+<script type="text/html" id="goods-tem">
+    {{each rows}}
+    <tr>
+        <td>{{(page-1)*size+1+$index}}</td>
+        <td>{{$value.proName}}</td>
+        <td>{{$value.proDesc}}</td>
+        <td>{{$value.num}}</td>
+        <td>{{$value.size}}</td>
+        <td>{{$value.statu}}</td>
+        <td>
+            <button class="btn btn-danger">下架</button>
+            <button class="btn btn-primary">编辑</button>
+        </td>
+    </tr>
+    {{/each}}
+</script>
 <script src="./js/common.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/goods.js"></script>
