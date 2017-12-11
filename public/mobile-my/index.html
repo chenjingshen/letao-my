@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <!-- 导入 字体图标的css -->
-    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
-    <!-- 导入mui的css -->
+    <title>乐淘主页</title>
+
+    <!-- 引入css文件 -->
+    <link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
-    <!-- 导入css -->
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-    <div class="lt_container">
-        <div class="lt_header">
+    <div id="layout">
+        <div id="header">
             <a href="javascript:void(0)">
                 <span class="fa fa-home"></span>
             </a>
@@ -26,17 +25,17 @@
                 <span class="fa fa-search"></span>
             </a>
         </div>
-        <div class="lt_content">
-            <!-- 滚动 -->
+        <div id="content">
+            <!-- 内容部分的屏幕滚动功能 -->
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
-                    <!-- 轮播图 -->
+                    <!--这里放置真实显示的DOM内容-->
                     <div id="slider" class="mui-slider">
                         <div class="mui-slider-group mui-slider-loop">
                             <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
                             <div class="mui-slider-item mui-slider-item-duplicate">
                                 <a href="#">
-                                    <img src="./images/banner4.png">
+                                    <img src="./images/banner9.png">
                                 </a>
                             </div>
                             <!-- 第一张 -->
@@ -63,6 +62,16 @@
                                     <img src="./images/banner4.png">
                                 </a>
                             </div>
+                            <div class="mui-slider-item">
+                                <a href="#">
+                                    <img src="./images/banner5.png">
+                                </a>
+                            </div>
+                            <div class="mui-slider-item">
+                                <a href="#">
+                                    <img src="./images/banner6.png">
+                                </a>
+                            </div>
                             <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
                             <div class="mui-slider-item mui-slider-item-duplicate">
                                 <a href="#">
@@ -75,11 +84,11 @@
                             <div class="mui-indicator"></div>
                             <div class="mui-indicator"></div>
                             <div class="mui-indicator"></div>
+                            <div class="mui-indicator"></div>
+                            <div class="mui-indicator"></div>
                         </div>
                     </div>
-                    <!-- 导航 -->
-                    <!-- .lt_nav>ul>li*6>a[href="javascript:void(0)"]>img[src="./images/nav$.png"] -->
-                    <div class="lt_nav">
+                    <div class="content-nav clearfix">
                         <ul>
                             <li>
                                 <a href="javascript:void(0)">
@@ -113,82 +122,77 @@
                             </li>
                         </ul>
                     </div>
-
-                    <!-- 商品区域 -->
-                    <!-- .lt_product>ul>li*4>a[href="javascript:void(0)"]>img[src="./images/product.jpg"]+p{adidas阿迪达斯 男式 场下休闲篮球鞋S83700 }+span{￥560.00}+span{$600}+br+input[type="button"] -->
-                    <div class="lt_product">
+                    <!-- 商品部分 -->
+                    <div class="content-goods">
                         <ul>
                             <li>
-                                <a href="javascript:void(0)">
+                                <a href="#">
                                     <img src="./images/product.jpg" alt="">
-                                    <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+                                    <h5>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h5>
                                     <span>￥560.00</span>
-                                    <span>1600</span>
+                                    <del>￥249.00</del>
                                     <br>
                                     <input type="button" value="立即购买">
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">
+                                <a href="#">
                                     <img src="./images/product.jpg" alt="">
-                                    <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+                                    <h5>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h5>
                                     <span>￥560.00</span>
-                                    <span>2600</span>
+                                    <del>￥249.00</del>
                                     <br>
                                     <input type="button" value="立即购买">
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">
+                                <a href="#">
                                     <img src="./images/product.jpg" alt="">
-                                    <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+                                    <h5>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h5>
                                     <span>￥560.00</span>
-                                    <span>3600</span>
+                                    <del>￥249.00</del>
                                     <br>
                                     <input type="button" value="立即购买">
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">
+                                <a href="#">
                                     <img src="./images/product.jpg" alt="">
-                                    <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+                                    <h5>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h5>
                                     <span>￥560.00</span>
-                                    <span>4600</span>
+                                    <del>￥249.00</del>
                                     <br>
                                     <input type="button" value="立即购买">
                                 </a>
                             </li>
                         </ul>
                     </div>
-                   
                 </div>
             </div>
-
         </div>
-        <div class="lt_footer">
-            <!-- ul>li*4>a[href="javascript:void(0)"]>span.fa.fa-home+p{首页} -->
+        <div id="footer">
             <ul>
-                <li class='active'>
-                    <a href="javascript:void(0)">
+                <li class="active">
+                    <a href="#">
                         <span class="fa fa-home"></span>
                         <p>首页</p>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">
-                        <span class="fa fa-list"></span>
+                    <a href="#">
+                        <span class="fa fa-bars"></span>
                         <p>分类</p>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">
-                        <span class="fa fa-cart-plus"></span>
+                    <a href="#">
+                        <span class="fa fa-shopping-cart"></span>
                         <p>购物车</p>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">
-                        <span class="fa fa-user-plus"></span>
+                    <a href="#">
+                        <span class="fa fa-user"></span>
                         <p>会员中心</p>
                     </a>
                 </li>
@@ -198,7 +202,18 @@
 </body>
 
 </html>
-<!-- 导入mui -->
+<!-- 引入js文件 -->
 <script src="./lib/mui/js/mui.min.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/index.js"></script>
+<script>
+    // 轮播图部分js
+    var gallery = mui('#slider');
+    gallery.slider({
+        interval: 1000 //自动轮播周期，若为0则不自动播放，默认为0；
+    });
+    // 屏幕滚动部分初始化代码
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+    });
+</script>
