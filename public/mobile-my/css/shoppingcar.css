@@ -1,0 +1,55 @@
+#content ul li{
+    border-bottom: 1px solid #ccc;
+}
+#content ul li a .ul-left{
+    padding: 10px;
+}
+#content ul li a .ul-left img{
+    display: block;
+}
+#content ul li a .ul-right p{
+    white-space: normal;
+}
+#content ul li a .ul-right span:nth-of-type(1){
+    font-size: 14px;
+    color: red;
+}
+#content ul li a .ul-right span:nth-of-type(1) del{
+    font-size: 12px;
+    line-height: 35px;
+    color: #999;
+}
+#content ul li a .ul-right span:nth-of-type(2){
+    font-size: 15px;
+    display: block;
+    color: #999;
+    line-height: 35px;
+}
+#content ul li a .ul-right span:nth-of-type(3){
+    color: #999;
+    font-size: 15px;
+}
+
+
+/* 订单部分 */
+#order{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #999;
+    background-color: #eeeeee;
+}
+#order p{
+    color: red;
+    font-size: 12px;
+    margin-left: 10px;
+}
+#order button{
+    width: 80px;
+    height: 30px;
+    background-color: red;
+    color: #fff;
+    font-size: 12px;
+    border: 1px solid red;
+    border-radius: 0;
+}

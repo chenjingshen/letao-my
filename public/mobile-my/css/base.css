@@ -31,6 +31,7 @@ ul,ol{
 }
 #header a{
     color: #fff;
+    /* font-size: 30px; */
 }
 #header h4{
     color: #fff;
@@ -40,10 +41,7 @@ ul,ol{
     position: relative;
     flex: 1;
     background-color: #fff;
-}
-/* 轮播图小圆点的样式 */
-.mui-slider-indicator{
-    bottom: 20px;
+    overflow: hidden;
 }
 /* 底部的样式 */
 #footer{
@@ -65,4 +63,19 @@ ul,ol{
 }
 #footer li.active a,#footer li.active p{
     color: orange;
+}
+
+/* usercenter.html用户中心的样式 */
+#content .userbutton{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: white;
+}
+/* login.html登录页面的样式 */
+#content .content-a{
+    font-size: 12px;
+    margin-top: 5px;
+    margin-right: 5px;
 }

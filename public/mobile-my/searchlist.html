@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品列表</title>
+
+    <!-- 引入css文件 -->
+    <link rel="icon" href="favicon.ico" type="images/x-icon"> <link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/searchlist.css">
+</head>
+
+<body>
+    <div id="layout">
+        <div id="header">
+            <a href="./search.html">
+                <span class="fa fa-chevron-left "></span>
+            </a>
+            <h4>商品列表</h4>
+            <a href="./search.html">
+                <!-- <span class="fa fa-search"></span> -->
+            </a>
+        </div>
+
+        <div id="content">
+            <!-- 内容部分的屏幕滚动功能 -->
+            <div class="content-right mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!-- 搜索框部分 -->
+                    <form action="./searchlist.html">
+                        <input type="search" placeholder="请输入搜索关键字">
+                        <button>搜索</button>
+                    </form>
+                    <div class="search-content">
+                        <div class="content-header">
+                            <ul>
+                                <li class="active">
+                                    <a href="javascript:void(0)">上架时间
+                                        <span class="fa fa-angle-down"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">价格
+                                        <span class="fa fa-angle-down"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">库存
+                                        <span class="fa fa-angle-down"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">结构
+                                        <span class="fa fa-angle-down"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 商品部分 -->
+                        <div class="content-goods">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/product.jpg" alt="">
+                                        <h5>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h5>
+                                        <span>￥560.00</span>
+                                        <del>￥249.00</del>
+                                        <br>
+                                        <input type="button" value="立即购买">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/product.jpg" alt="">
+                                        <h5>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h5>
+                                        <span>￥560.00</span>
+                                        <del>￥249.00</del>
+                                        <br>
+                                        <input type="button" value="立即购买">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/product.jpg" alt="">
+                                        <h5>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h5>
+                                        <span>￥560.00</span>
+                                        <del>￥249.00</del>
+                                        <br>
+                                        <input type="button" value="立即购买">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/product.jpg" alt="">
+                                        <h5>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h5>
+                                        <span>￥560.00</span>
+                                        <del>￥249.00</del>
+                                        <br>
+                                        <input type="button" value="立即购买">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="./category.html">
+                        <span class="fa fa-bars"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./shoppingcar.html">
+                        <span class="fa fa-shopping-cart"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="usercenter.html">
+                        <span class="fa fa-user"></span>
+                        <p>会员中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- 引入js文件 -->
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/mui/js/mui.min.js"></script>
+<script src="./js/common.js"></script>

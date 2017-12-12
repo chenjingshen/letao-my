@@ -1,166 +1,164 @@
-/*reset css*/
-/*common css*/
-/*大容器*/
-.lt_container{
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: #fff;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-/*顶部通栏*/
-.lt_topBar{
-    width: 100%;
-    height: 45px;
-    background: #069;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.lt_topBar h3{
-    font-size: 18px;
-    line-height: 45px;
-    text-align: center;
-    color: #fff;
-    margin: 0;
-    font-weight: normal;
-}
-.lt_topBar a{
-    position: absolute;
-    top: 0;
-    width: 45px;
-    height: 45px;
-    text-align: center;
-    line-height: 45px;
-    color: #fff;
-}
-.lt_topBar .btn_left{
-    left: 0;
-}
-.lt_topBar .btn_left .mui-icon{
-    font-weight: bold;
-}
-.lt_topBar .btn_right{
-    right: 0;
-}
-/*主体内容*/
-.lt_content{
-    width: 100%;
-    height: 100%;
-    padding-top: 45px;
-    padding-bottom: 55px;
-}
-.lt_content .lt_wrapper{
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-/*底部页签*/
-.lt_tabBar{
-    width: 100%;
-    height: 55px;
-    background: #069;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
-.lt_tabBar ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.lt_tabBar ul li{
-    width: 25%;
-    float: left;
-    text-align: center;
-    padding-top: 10px;
-}
-.lt_tabBar ul li.now a{
-    color: darkorange;
-}
-.lt_tabBar ul li.now a p{
-    color: darkorange;
-}
-.lt_tabBar ul li a{
-    color: #fff;
-}
-.lt_tabBar ul li a p{
-    color: #fff;
-    font-size: 12px;
-    padding-bottom: 0;
-    margin-bottom: 0;
+@charset "UTF-8";
+html, body {
+  height: 100%;
 }
 
 
-/*model css*/
-
-/*商品*/
-.lt_product{
-    padding: 0 10px;
-    background: #fff;
-}
-.lt_product .item{
-    width: 48%;
-    float: left;
-    text-align: center;
-    box-shadow: 0 0 5px #ccc;
-    margin-top: 10px;
-    padding: 10px 5px;
-}
-/*even 偶数  odd 奇数*/
-.lt_product .item:nth-child(even){
-    margin-left: 4%;
-}
-.lt_product .item img{
-    width: 100%;
-    display: block;
-    margin-bottom:5px;
-}
-.lt_product .mui-ellipsis-2{
-    height: 41px;
-}
-.lt_product .item p{
-    font-size: 12px;
-}
-.lt_product .item p span:first-child{
-    color: red;
-}
-.lt_product .item p span:last-child{
-    color: grey;
-    text-decoration: line-through;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-/*加载中效果*/
-.loading{
-    min-height: 250px;
-    width: 100%;
-    text-align: center;
-    line-height: 250px;
+/*让所有图片默认都是100%*/
+img {
+  width: 100%;
+  display: block;
 }
-.loading .mui-icon{
-    color: #069;
-    animation: rotateLoading 1s infinite;
+
+.lt_container {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 55px;
 }
-@keyframes rotateLoading {
-    from{
-        transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-    }
+
+.lt_header {
+  width: 100%;
+  height: 45px;
+  background-color: #069;
+  position: absolute;
+  top: 0;
 }
-/*webkit兼容*/
-@-webkit-keyframes rotateLoading {
-    from{
-        transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-    }
+
+.lt_header .icon_left,
+.lt_header .icon_right {
+  height: 45px;
+  width: 45px;
+  position: absolute;
+  top: 0;
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
+}
+
+.lt_header .icon_left {
+  left: 0;
+}
+
+
+.lt_header .icon_right {
+  right: 0;
+}
+
+.lt_header h4 {
+  text-align: center;
+  color: #fff;
+  line-height: 45px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.lt_content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.lt_footer {
+  width: 100%;
+  height: 55px;
+  background-color: #069;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.lt_footer li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 10px 0;
+  color: #fff;
+}
+
+.lt_footer li.now a {
+  color: darkorange;
+}
+
+.lt_footer li.now p {
+  color: darkorange;
+}
+
+.lt_footer li a {
+  color: #fff;
+}
+
+.lt_footer li p {
+  color: #fff;
+  font-size: 12px;
+  margin: 0;
+}
+
+
+
+/*商品样式*/
+.lt_product {
+  padding: 10px;
+}
+
+.lt_product .item {
+  border: 1px solid #ccc;
+  width: 48%;
+  float: left;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.lt_product .item:nth-child(odd){
+  margin-right: 4%;
+}
+
+.lt_product .item .proName {
+  height: 40px;
+}
+
+.lt_product .item .price {
+  color: red;
+}
+
+.lt_product .item .oldPrice {
+  text-decoration: line-through;
+}
+
+
+
+/*搜索框样式*/
+.lt_search {
+  padding: 10px;
+  position: relative;
+}
+
+.lt_search input {
+  width: 100%;
+  height: 34px;
+  border: 1px solid #007aff;
+  font-size: 12px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.lt_search button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 0 5px 5px 0;
 }

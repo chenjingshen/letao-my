@@ -2,11 +2,10 @@
 /* 轮播图 */
 #slider img{
     width: 100%;
-    height: 100%;
 }
 /* 导航部分 */
 #content .content-nav{
-    padding: 0 10px;
+    padding: 10px;
     width: 100%;
 }
 #content .content-nav ul{

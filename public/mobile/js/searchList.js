@@ -1,171 +1,142 @@
-$(function(){
-    /*
-     初始化渲染
-     1.获取地址栏关键字
-     2.通过关键字去后台获取和关键字相关的商品数据
-     3.渲染商品列表
+/**
+ * Created by HUCC on 2017/11/13.
+ */
+$(function () {
 
-     当前页搜索
-     1.点击搜索按钮 获取到关键字
-     2.通过关键字去后台获取和关键字相关的商品数据
-     3.渲染商品列表
+  var currentPage = 1;
+  var pageSize = 100;
 
-     排序展示
-     1.点击排序按钮 获取排序方式
-     2.通过当前的关键字和排序方式去后台获取相关的商品数据
-     3.渲染商品列表
 
-     下拉刷新
-     1.当用户下拉页面
-     2.通过关键字去后台重新获取和关键字相关的商品数据
-     3.渲染商品列表
+  //1. 获取地址栏的参数，设置到文本框的value值
+  var key = tools.getParam("key");
+  $(".lt_search input").val(key);
 
-     上拉加载
-     1.当用户上拉页面
-     2.通过关键字去后台获取和关键字相关的商品数据（而且是根据当前页面进行获取）
-     3.渲染商品列表 当时是追加到页面当中
-     * */
 
-    /*1.初始化渲染*/
-    /*获取地址栏关键字*/
-    var key = lt.getUrlParams().key || '';
-    /*显示在搜索框中*/
-    $('.search_input').val(key);
-    /*当前渲染页面*/
-    var currPage = 1;
+  //封装一个函数，这个函数可以发送ajax请求，渲染页面
+  function render() {
+    //2. 发送ajax请求，获取关键字对应的商品结果
 
-    /*4.优化渲染操作*/
-    /* 加载时候   关键字 排序（key=value） 当前页  页面*/
-    var render = function(callback){
-        /*获取搜索框当中的按钮*/
-        var key = $.trim($('.search_input').val());
-        /*判断是否输入了内容*/
-        if(!key){
-            mui.toast('请输入关键字');
-            return false;
-        }
-        /*获取需要排序的方式*/
-        var type = $('[data-type].now').attr('data-type');
-        var value = $('[data-type].now').find('span').hasClass('fa-angle-down')?2:1;
-        var order = {};
-        if(type){
-            order[type] = value;
-        }
-        /*显示多少条*/
-        var pageSize = 10;
+    //判断是否需要发送排序的参数, 获取选中的那个a标签的type属性。
+    var type = $(".lt_sort a[data-type].now").data("type");
+    var value = $(".lt_sort a[data-type].now").find("span").hasClass("fa-angle-down")?2:1;
 
-        /*去后台获取数据*/
-        getProductListData($.extend({
-            proName:key,
-            page:currPage,
-            pageSize:pageSize
-        },order),function(data){
-            /*渲染商品列表*/
-            if(currPage == 1){
-                $('.lt_product').html(template('productTpl',data));
-            }else{
-                $('.lt_product').append(template('productTpl',data));
-            }
+    var obj = {};
+    obj.proName = key;
+    obj.page = currentPage;
+    obj.pageSize = pageSize;
 
-            /*成功请求的其他业务*/
-            callback && callback();
-        });
-    };
+    //如果渲染时，发现排序字段有now的属性，说明需要排序
+    if(type){
+      obj[type] = value;
+    }
+
+
+
+    $.ajax({
+      type: "get",
+      url: "/product/queryProduct",
+      data: obj,
+      success: function (data) {
+
+
+        setTimeout(function () {
+          console.log(data);
+          $(".lt_product").html(template("tpl", data));
+        }, 1000);
+
+      }
+    });
+  }
+
+  render();
+
+
+  //点击搜索按钮，需要获取到key，重新渲染
+  $(".lt_search button").on("click", function () {
+    //获取key
+    key = $(".lt_search input").val().trim();
+    if (key === "") {
+      mui.toast("请输入搜索内容");
+      return false;
+    }
+
+
+    //点击搜索的时候，需要清空排序的条件
+    $(".lt_sort a").removeClass("now").find("span").removeClass("fa-angle-up").addClass("fa-angle-down");
+
+
+
+    $(".lt_product").html('<div class="loading"></div>');
+
+    //重新渲染
+    render();
+  });
+
+
+  //排序功能
+  //1. 首先给 lt_sort下的a标签（带有data-type属性）注册点击事件
+  //2. 如果当前a标签已经有now这个类，需要切换a标签的箭头方向
+  //如果当前a标签没有now这个类，让当前a标签添加上这个类，同时移除其他a标签now这个类，并且让所有的a标签的箭头都向下
+  /*$(".lt_sort a[data-type]").click(function () {
+    var $this = $(this);
+
+    if ($this.hasClass("now")) {
+      //说明有这个类
+      //找到当前a下的span，把fa-angle-down这个类改成fa-angle-up
+      $this.find("span").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
+    } else {
+      //没有这个类
+      $(this).addClass("now").siblings().removeClass("now");
+      //让所有的a标签的箭头全部向下
+      $(".lt_sort a").find("span").removeClass("fa-angle-up").addClass("fa-angle-down");
+    }
+
+
+    //获取排序字段
+    var type = $this.data("type");
+    //判断是下箭头的话，降序，value是2   否则value是1
+    var value = $(this).find("span").hasClass("fa-angle-down") ? 2 : 1;
+
+    var obj = {};
+    obj[type] = value;
+    obj.page = currentPage;
+    obj.pageSize = pageSize;
+    obj.proName = key;
+
+    //2. 发送ajax请求，获取关键字对应的商品结果
+    $.ajax({
+      type: "get",
+      url: "/product/queryProduct",
+      data: obj,
+      success: function (data) {
+        console.log(data);
+
+        $(".lt_product").html(template("tpl", data));
+
+      }
+    });
+
+  });*/
+
+
+  //排序功能
+  $(".lt_sort [data-type]").on("click", function () {
+
+    //修改样式
+    var $this = $(this);
+    if($this.hasClass("now")){
+      //换箭头
+      $this.find("span").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
+    }else {
+      $this.addClass("now").siblings().removeClass("now");
+      //让所有的箭头都向下
+      $(".lt_sort a").find("span").removeClass("fa-angle-up").addClass("fa-angle-down");
+    }
+
+    $(".lt_product").html('<div class="loading"></div>');
     render();
 
-    /*2.当前页搜索*/
-    $('.search_btn').on('tap',function(){
-        /*去掉排序*/
-        $('[data-type].now').removeClass('now').find('span').removeClass('fa-angle-up').addClass('fa-angle-down');
-        /*显示加载*/
-        $('.lt_product').html('<div class="loading"><span class="mui-icon mui-icon-spinner"></span></div>');
-        /*当前页码*/
-        currPage = 1;
-        /*渲染*/
-        render();
-    });
+  });
 
-    /*3.排序展示*/
-    $('[data-type]').on('tap',function(){
-        /*当前点击的元素*/
-        var $this = $(this);
-        /*换箭头*/
-        if($this.hasClass('now')){
-            var arrow = $(this).find('span');
-            if(arrow.hasClass('fa-angle-down')){
-                arrow.removeClass('fa-angle-down').addClass('fa-angle-up');
-            }else{
-                arrow.removeClass('fa-angle-up').addClass('fa-angle-down');
-            }
-        }else{
-            /*给当前元素加上now*/
-            $('[data-type].now').removeClass('now').find('span').removeClass('fa-angle-up').addClass('fa-angle-down');
-            $this.addClass('now');
-        }
-        /*当前页码*/
-        currPage = 1;
-        /*渲染*/
-        render();
-    });
-
-    mui.init({
-        /*4.下拉刷新*/
-        pullRefresh : {
-            container:".mui-scroll-wrapper",
-            down : {
-                callback :function(){
-                    /*注意：下拉操作完成之后 业务 */
-                    /*模拟一次向后台发送请求 响应之后的时间消耗*/
-                    var that = this;/*这个是下拉组件对象  对象当中含有终止下拉操作的方法*/
-                    /*当前页码*/
-                    currPage = 1;
-                    /*开发真实的业务*/
-                    render(function(){
-                        /*下拉效果隐藏*/
-                        that.endPulldownToRefresh();
-                    });
-                }
-            },
-            /*5.上拉加载*/
-            up : {
-                callback:function(){
-                    /*注意：上拉操作完成之后 业务 */
-                    /*模拟一次向后台发送请求 响应之后的时间消耗*/
-                    var that = this;/*这个是上拉组件对象  对象当中含有终止下拉操作的方法*/
-                    setTimeout(function(){
-                        /*上拉效果隐藏*/
-                        /*可传参 如果传的是true 表示没有更多数据*/
-                        that.endPullupToRefresh();
-                    },1000);
-
-                    /*下一页*/
-                    currPage ++;
-                    /*开发真实的业务*/
-                    render(function(){
-                        /*上拉效果隐藏*/
-                        /*可传参 如果传的是true 表示没有更多数据*/
-                        that.endPullupToRefresh();
-                    });
-                }
-            }
-        }
-    });
 
 });
-
-/*获取后台数据 商品列表数据*/
-var getProductListData = function(prams,callback){
-    $.ajax({
-        type:'get',
-        url:'/product/queryProduct',
-        data:prams,
-        dataType:'json',
-        success:function(data){
-            /*模拟一下加载时间*/
-            setTimeout(function(){
-                if(data.data.length == 0) mui.toast('没有相关商品');
-                callback && callback(data);
-            },1000);
-        }
-    });
-}

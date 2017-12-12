@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+
+    <!-- 引入css文件 -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" /><link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/shoppingcar.css">
+</head>
+
+<body>
+    <div id="layout">
+        <div id="header">
+            <a href="./index.html">
+                <span class="fa fa-chevron-left "></span>
+            </a>
+            <h4>购物车</h4>
+            <a href="./search.html">
+                <!-- <span class="fa fa-search"></span> -->
+            </a>
+        </div>
+        <div id="content">
+            <!-- 内容部分的屏幕滚动功能 -->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!-- 内容部分 -->
+                    <ul class="mui-table-view mui-clearfix">
+                        <li class="mui-table-view-cell mui-media">
+                            <a href="javascript:;">
+                                <div class="ul-left mui-pull-left">
+                                    <img class="mui-media-object" src="./images/detail.jpg">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="mui-media-body ul-right">
+                                    <p>匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮</p>
+                                    <span>￥499.00<del>888.00</del></span>
+                                    <span class="mui-pull-right">1双</span>
+                                    <br>
+                                    <span>鞋码：42</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 生成订单部分 -->
+        <div id="order">
+            <p>订单总金额：<span>￥00.00</span></p>
+            <button type="submit">生成订单</button>
+        </div>
+        <div id="footer">
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./category.html">
+                        <span class="fa fa-bars"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="./shoppingcar.html">
+                        <span class="fa fa-shopping-cart"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="usercenter.html">
+                        <span class="fa fa-user"></span>
+                        <p>会员中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- 引入js文件 -->
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/mui/js/mui.min.js"></script>
+<script src="./js/common.js"></script>

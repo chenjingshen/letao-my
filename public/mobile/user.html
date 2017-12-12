@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>乐淘商城-分类页</title>
+  <title>乐淘商城-会员中心</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="lib/mui/css/mui.css">
   <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/category.css">
+  <link rel="stylesheet" href="css/user.css">
 
 </head>
 <body>
@@ -18,30 +18,32 @@
 
 <div class="lt_container">
   <div class="lt_header">
-
-    <!--javascript: 伪协议， 页面不做跳转，变成执行js代码。-->
     <a href="javascript:history.go(-1);" class="icon_left"><span class="mui-icon mui-icon-back"></span></a>
-    <h4>乐淘分类</h4>
-    <a href="search.html" class="icon_right"><span class="fa fa-search"></span></a>
+    <h4>个人中心</h4>
   </div>
 
   <div class="lt_content">
-  
-    <div class="lt_category_l">
-      <div class="mui-scroll-wrapper">
-        <ul class="mui-scroll">
-          <!--挖个坑-->
-        </ul>
-      </div>
-    </div>
-    <div class="lt_category_r">
-      <div class="mui-scroll-wrapper">
-        <ul class="mui-scroll">
-         <!--挖个坑-->
-        </ul>
-      </div>
-    </div>
 
+    <ul class="mui-table-view">
+      <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;" class="mui-navigate-right userinfo">
+        <!--挖个坑-->
+        </a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a class="mui-navigate-right">账号与安全</a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a href="cart.html" class="mui-navigate-right">我的购物车</a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a class="mui-navigate-right">收获地址管理</a>
+      </li>
+    </ul>
+
+    <div class="lt_logout">
+      <a href="javascript:;" class="mui-btn mui-btn-default mui-block">退出</a>
+    </div>
   </div>
 
 
@@ -53,7 +55,7 @@
           <p>首页</p>
         </a>
       </li>
-      <li class="now">
+      <li>
         <a href="category.html">
           <span class="fa fa-bars"></span>
           <p>分类</p>
@@ -65,7 +67,7 @@
           <p>购物车</p>
         </a>
       </li>
-      <li>
+      <li class="now">
         <a href="user.html">
           <span class="fa fa-user"></span>
           <p>会员中心</p>
@@ -77,31 +79,18 @@
 
 
 <script type="text/html" id="tpl">
-  {{each rows v i}}
-  <li data-id="{{v.id}}" class="{{i==0?'now':''}}"><a href="javascript:;">{{v.categoryName}}</a></li>
-  {{/each}}
-</script>
-
-<script type="text/html" id="tpl2">
-  {{if rows.length ===0}}
-  <p class="category_tips">暂时没有更多分类数据</p>
-  {{/if}}
-
-  {{each rows v i}}
-  <li>
-    <a href="#">
-      <img src="{{v.brandLogo?v.brandLogo:'images/none.png'}}" alt="">
-      <p>{{v.brandName}}</p>
-    </a>
-  </li>
-  {{/each}}
+  <img class="mui-media-object mui-pull-left" src="images/user.jpg">
+  <div class="mui-media-body">
+    {{username}}
+    <p class='mui-ellipsis'>绑定手机：{{mobile}}</p>
+  </div>
 </script>
 
 <script src="lib/mui/js/mui.js"></script>
 <script src="lib/zepto/zepto.min.js"></script>
 <script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
-<script src="js/category.js"></script>
+<script src="js/user.js"></script>
 
 </body>
 </html>

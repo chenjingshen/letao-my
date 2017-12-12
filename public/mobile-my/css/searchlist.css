@@ -1,0 +1,85 @@
+#content form {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#content form input {
+    font-size: 12px;
+    height: 34px;
+    background-color: #fff;
+    border: 1px solid #006699;
+    border-radius: 5px;
+    text-align: left;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+}
+
+#content form button {
+    color: #fff;
+    font-size: 12px;
+    width: 60px;
+    height: 34px;
+    background-color: #006699;
+    border: 1px solid #006699;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.search-content .content-header{}
+.search-content .content-header ul{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30px;
+    background-color: #eeeeee;
+}
+.search-content .content-header ul li.active a{
+    color: orange;
+}
+.search-content .content-header ul li a{
+    font-size: 12px;
+    color: #333;
+}
+
+/* 商品部分 */
+
+#content .content-goods ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+#content .content-goods ul li{
+    width: 50%;
+    padding: 10px;
+}
+#content .content-goods ul li a{
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 5px #ccc;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+#content .content-goods ul li a img{
+    width: 100%;
+}
+#content .content-goods ul li a h5{
+    font-size: 18px;
+    color: #007aff;
+}
+#content .content-goods ul li a span{
+    font-size: 12px;
+    color: red;
+}
+#content .content-goods ul li a del{
+    font-size: 12px;
+    color: #999;
+}
+#content .content-goods ul li a input{
+    background-color: #007aff;
+    color: #fff;
+    margin-bottom: 10px;
+}

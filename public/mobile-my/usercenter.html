@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人中心</title>
+
+    <!-- 引入css文件 -->
+    <link rel="icon" href="favicon.ico" type="images/x-icon">
+    <link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+</head>
+
+<body>
+    <div id="layout">
+        <div id="header">
+            <a href="javascript:void(0)">
+                <span class="fa fa-home"></span>
+            </a>
+            <h4>个人中心</h4>
+            <a href="javascript:void(0)">
+                <span class="fa fa-search"></span>
+            </a>
+        </div>
+
+        <div id="content">
+            <!-- 内容部分的屏幕滚动功能 -->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!-- 内容部分 -->
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell mui-media">
+                            <a href="javascript:; " class="mui-navigate-right">
+                                <img class="mui-media-object mui-pull-left" src="./images/user.jpg">
+                                <div class="mui-media-body">
+                                    itcast
+                                    <p class='mui-ellipsis'>绑定手机：18888888888</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">账号与安全</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">我的购物车</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">收货地址管理</a>
+                        </li>
+                    </ul>
+                    <a href="./login.html">
+                        <button class="userbutton">退出</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./category.html">
+                        <span class="fa fa-bars"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./shoppingcar.html">
+                        <span class="fa fa-shopping-cart"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="usercenter.html">
+                        <span class="fa fa-user"></span>
+                        <p>会员中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- 引入js文件 -->
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/mui/js/mui.min.js"></script>
+<script src="./js/common.js"></script>

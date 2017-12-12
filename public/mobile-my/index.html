@@ -8,7 +8,7 @@
     <title>乐淘主页</title>
 
     <!-- 引入css文件 -->
-    <link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
@@ -25,6 +25,7 @@
                 <span class="fa fa-search"></span>
             </a>
         </div>
+
         <div id="content">
             <!-- 内容部分的屏幕滚动功能 -->
             <div class="mui-scroll-wrapper">
@@ -32,31 +33,26 @@
                     <!--这里放置真实显示的DOM内容-->
                     <div id="slider" class="mui-slider">
                         <div class="mui-slider-group mui-slider-loop">
-                            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
                             <div class="mui-slider-item mui-slider-item-duplicate">
                                 <a href="#">
-                                    <img src="./images/banner9.png">
+                                    <img src="./images/banner6.png">
                                 </a>
                             </div>
-                            <!-- 第一张 -->
                             <div class="mui-slider-item">
                                 <a href="#">
                                     <img src="./images/banner1.png">
                                 </a>
                             </div>
-                            <!-- 第二张 -->
                             <div class="mui-slider-item">
                                 <a href="#">
                                     <img src="./images/banner2.png">
                                 </a>
                             </div>
-                            <!-- 第三张 -->
                             <div class="mui-slider-item">
                                 <a href="#">
                                     <img src="./images/banner3.png">
                                 </a>
                             </div>
-                            <!-- 第四张 -->
                             <div class="mui-slider-item">
                                 <a href="#">
                                     <img src="./images/banner4.png">
@@ -72,7 +68,6 @@
                                     <img src="./images/banner6.png">
                                 </a>
                             </div>
-                            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
                             <div class="mui-slider-item mui-slider-item-duplicate">
                                 <a href="#">
                                     <img src="./images/banner1.png">
@@ -88,7 +83,7 @@
                             <div class="mui-indicator"></div>
                         </div>
                     </div>
-                    <div class="content-nav clearfix">
+                    <div class="content-nav">
                         <ul>
                             <li>
                                 <a href="javascript:void(0)">
@@ -170,28 +165,29 @@
                 </div>
             </div>
         </div>
+        
         <div id="footer">
             <ul>
                 <li class="active">
-                    <a href="#">
+                    <a href="./index.html">
                         <span class="fa fa-home"></span>
                         <p>首页</p>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./category.html">
                         <span class="fa fa-bars"></span>
                         <p>分类</p>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./shoppingcar.html">
                         <span class="fa fa-shopping-cart"></span>
                         <p>购物车</p>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="usercenter.html">
                         <span class="fa fa-user"></span>
                         <p>会员中心</p>
                     </a>
@@ -203,17 +199,6 @@
 
 </html>
 <!-- 引入js文件 -->
+<script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/mui/js/mui.min.js"></script>
 <script src="./js/common.js"></script>
-<script src="./js/index.js"></script>
-<script>
-    // 轮播图部分js
-    var gallery = mui('#slider');
-    gallery.slider({
-        interval: 1000 //自动轮播周期，若为0则不自动播放，默认为0；
-    });
-    // 屏幕滚动部分初始化代码
-    mui('.mui-scroll-wrapper').scroll({
-        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-    });
-</script>

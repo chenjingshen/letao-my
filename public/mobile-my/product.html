@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
+
+    <!-- 引入css文件 -->
+    <link rel="icon" href="favicon.ico" type="images/x-icon">
+    <link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/product.css">
+</head>
+
+<body>
+    <div id="layout">
+        <div id="header">
+            <a href="javascript:void(0)">
+                <span class="fa fa-chevron-left"></span>
+            </a>
+            <h4>商品详情</h4>
+            <a href="javascript:void(0)">
+                <span class="fa fa-refresh"></span>
+            </a>
+        </div>
+
+        <div id="content">
+            <!-- 内容部分的屏幕滚动功能 -->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <div id="slider" class="mui-slider">
+                        <div class="mui-slider-group mui-slider-loop">
+                            <div class="mui-slider-item mui-slider-item-duplicate">
+                                <a href="#">
+                                    <img src="./images/banner6.png">
+                                </a>
+                            </div>
+                            <div class="mui-slider-item">
+                                <a href="#">
+                                    <img src="./images/banner1.png">
+                                </a>
+                            </div>
+                            <div class="mui-slider-item">
+                                <a href="#">
+                                    <img src="./images/banner2.png">
+                                </a>
+                            </div>
+                            <div class="mui-slider-item">
+                                <a href="#">
+                                    <img src="./images/banner3.png">
+                                </a>
+                            </div>
+                            <div class="mui-slider-item">
+                                <a href="#">
+                                    <img src="./images/banner4.png">
+                                </a>
+                            </div>
+                            <div class="mui-slider-item">
+                                <a href="#">
+                                    <img src="./images/banner5.png">
+                                </a>
+                            </div>
+                            <div class="mui-slider-item">
+                                <a href="#">
+                                    <img src="./images/banner6.png">
+                                </a>
+                            </div>
+                            <div class="mui-slider-item mui-slider-item-duplicate">
+                                <a href="#">
+                                    <img src="./images/banner1.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mui-slider-indicator">
+                            <div class="mui-indicator mui-active"></div>
+                            <div class="mui-indicator"></div>
+                            <div class="mui-indicator"></div>
+                            <div class="mui-indicator"></div>
+                            <div class="mui-indicator"></div>
+                            <div class="mui-indicator"></div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <p>这是一个寂寞的天，下着有些伤心的雨。这是一个寂寞的天，下着有些伤心的雨。这是一个寂寞的天，下着有些伤心的雨</p>
+                        </li>
+                        <li>
+                            <p>价格：
+                                <span>￥499</span>
+                                <del>￥599</del>
+                            </p>
+                        </li>
+                        <li>
+                            <p>尺码：
+                                <span>31</span>
+                                <span>32</span>
+                                <span>33</span>
+                                <span>34</span>
+                                <span>35</span>
+                                <span>36</span>
+                                <span>37</span>
+                                <span>38</span>
+                                <span>39</span>
+                                <span>40</span>
+                                <span>41</span>
+                                <span>42</span>
+                                <span>43</span>
+                                <span>44</span>
+                                <span>45</span>
+                                <span>46</span>
+                                <span>47</span>
+                                <span>48</span>
+                                <span>49</span>
+                                <span>50</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>库存：
+                                <div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='100'>
+                                    <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                    <input class="mui-numbox-input" type="number" />
+                                    <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                                </div>
+                                <span class="stock-num">剩余数量20双</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>详情：穿什么潮我看，神马</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer-product">
+            <a href="./shoppingcar.html">去购物车</a>
+            <div class="footer-right">
+                <button type="button" class="mui-btn mui-btn-danger">加入购物车</button>
+                <button type="button" class="mui-btn mui-btn-warning">立即购买</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- 引入js文件 -->
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/mui/js/mui.min.js"></script>
+<script src="./js/common.js"></script>

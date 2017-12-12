@@ -1,0 +1,37 @@
+#footer.footer-product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 10px;
+    background-color: #d3d3d3;
+    font-size: 14px;
+}
+
+#content ul li{
+    display: flex;
+    min-width: 42px;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    align-items: center;
+}
+
+#content ul li:nth-child(2) span{
+    color: red;
+}
+#content ul li:nth-child(3) span{
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+#content ul li span{
+    font-size: 12px;
+}
+#content ul li p{
+    font-size: 16px;
+    color: #666;
+}
+#content ul li .stock-num{
+    font-size: 12px;
+    color: #999;
+    margin-left: 10px;
+}

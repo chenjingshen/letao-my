@@ -1,0 +1,40 @@
+#content form>div{
+    margin: 15px 10px;
+}
+#content form>div>input{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#content form>div.gain{
+    display: flex;
+    justify-content: space-between;
+}
+#content form>div.gain>input{
+    margin-right: 15px;
+    flex: 1
+}
+#content form>div.gain button{
+    width: 108px;
+    font-size: 16px;
+}
+#content .mui-input-group .mui-input-row:after{
+    content: "";
+    height: 0;
+}
+#content .mui-input-group:before,#content .mui-input-group:after{
+    height: 0;
+}
+#content .button-zhuce{
+    width: 94%;
+    height: 40px;
+    font-size: 18px;
+    margin: 0 auto;
+    display: block;
+}
+#content .content-bottom{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    font-size: 12px;
+    align-items: center;
+}
