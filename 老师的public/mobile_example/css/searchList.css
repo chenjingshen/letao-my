@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.lt_sort {
+  background-color: #eee;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  padding: 0 10px;
+}
+
+.lt_sort a {
+  float: left;
+  width: 25%;
+  text-align: center;
+  color: #333;
+}
+
+.lt_sort a.now {
+  color: darkorange;
+}
+
+
+.loading {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #069;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top:200px;
+  animation: play 1s ease-in-out infinite;
+}
+
+/*动画怎么写*/
+@keyframes play {
+  from {
+    transform: translate(-50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%) rotate(360deg);
+  }
+}

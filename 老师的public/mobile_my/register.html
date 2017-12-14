@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 导入 字体图标的css -->
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
+    <!-- 导入mui的css -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <!-- 导入css -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+
+<body>
+    <div class="lt_container">
+        <div class="lt_header">
+            <a href="javascript:void(0)">
+                <span class="fa fa-chevron-left"></span>
+            </a>
+            <h4>用户注册</h4>
+            <a href="javascript:void(0)">
+                <span class="fa fa-search"></span>
+            </a>
+        </div>
+        <div class="lt_content">
+            <form class="mui-input-group register-form">
+                <div class="mui-input-row mui-password">
+                    <input type="password" class="mui-input-password" data-input-password="3">
+                </div>
+                <div class="mui-input-row mui-password">
+                    <input type="password" class="mui-input-password" data-input-password="3">
+                    <span class="mui-icon mui-icon-eye"></span>
+                </div>
+                <div class="mui-input-row mui-password">
+                    <input type="password" class="mui-input-password" data-input-password="3">
+                    <span class="mui-icon mui-icon-eye"></span>
+                </div>
+                <div class="mui-input-row mui-password">
+                    <input type="password" class="mui-input-password" data-input-password="3">
+                </div>
+                <div class="mui-input-row mui-password">
+                    <input type="password" class="mui-input-password" data-input-password="3">
+                    <button class="mui-btn mui-btn-primary">获取验证码</button>
+                </div>
+
+                <div class="mui-button-row">
+                    <button type="submit" class="mui-btn mui-btn-primary">注册</button>
+                </div>
+            </form>
+            <!-- .form-bottom>(input[type="checkbox"]+span{ 我同意《会员服务协议》})+a[href='javascript:void(0)']{立即登陆} -->
+            <div class="form-bottom mui-clearfix">
+                <input class="mui-pull-left" type="checkbox">
+                <span class="mui-pull-left"> 我同意《会员服务协议》</span>
+                <a class="mui-pull-right" href="javascript:void(0)">立即登陆</a>
+            </div>
+        </div>
+        <div class="lt_footer">
+            <!-- ul>li*4>a[href="javascript:void(0)"]>span.fa.fa-home+p{首页} -->
+            <ul>
+                <li>
+                    <a href="javascript:void(0)">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./category.html">
+                        <span class="fa fa-list"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li class='active'>
+                    <a href="./shoppingCar.html">
+                        <span class="fa fa-cart-plus"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./userCenter.html">
+                        <span class="fa fa-user-plus"></span>
+                        <p>会员中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- 导入mui -->
+<script src="./lib/zepto/zepto.min.js"></script><script src="./lib/mui/js/mui.min.js"></script>
+<script src="./js/common.js"></script>

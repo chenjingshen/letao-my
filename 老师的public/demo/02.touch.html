@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 注释视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            touch-action: none
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // var startTime = 0;
+    // document.body.addEventListener('touchstart',function(){
+    //     console.log('start');
+    //     startTime =Date.now();
+    // })
+    // document.body.addEventListener('touchmove',function(){
+    //     console.log('move');
+    // })
+    // document.body.addEventListener('touchend',function(){
+    //     console.log('end');
+    // })
+    // document.body.onclick = function(){
+    //     console.log('click');
+    //     console.log(Date.now()-startTime);
+    // }
+    /*
+        1.移动端 click事件会比touch晚
+            为了区分 双击
+            早期的移动端页面 pc端缩放成移动页
+            双击缩放
+                如果点了 a 或者是有点击事件的元素
+            如果两次点击间隔 超过300 人为 点击
+            如果300以内 双击缩放
+            乔帮主
+                ios中 最早推出
+        2.现在 有了视口属性 
+            加了视口之后 延迟一会 肉眼基本看不出来
+                现在 不会有很长的延迟
+        3.
+            click有没有延迟 移动端
+                有
+                我的上一个项目中 我用的就是 click
+    */
+
+
+    /*
+        touch 模拟点击
+        点了 快速松开
+            移动了 失效
+            时间太长(100以内) 失效
+        zepto 就封装了 一个 这样的事件
+            tap(轻敲)
+
+    */
+</script>
+<!-- 导入zepto -->
+<script src="./src/zepto.js"></script>
+<script src="./src/event.js"></script>
+<!-- touch 依赖于 event -->
+<script src="./src/touch.js"></script>
+<script>
+    $(function () {
+        $('body').on('swipeLeft', function () {
+            console.log('left');
+            $(this).css({
+                backgroundColor:"green",
+            })
+        }).on('swipeRight', function () {
+            console.log('right');
+            $(this).css({
+                backgroundColor:"hotpink",
+            })
+        })
+        
+    })
+    /*
+        如果 不用zepto封装的 touch 可以自己封装
+        逻辑是 
+        在touchEnd中 判断 移动的距离 以及触摸 的 时间即可
+    */ 
+</script>

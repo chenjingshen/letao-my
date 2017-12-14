@@ -1,0 +1,66 @@
+/* 内容 左侧样式 */
+
+.lt_content {
+    display: flex;
+}
+
+.content_left {
+    width: 90px;
+    position: relative;
+}
+
+.content_left ul {}
+
+.content_left ul li {}
+
+.content_left ul li.active {}
+
+.content_left ul li.active a {
+    background-color: white;
+    border-right-color: transparent;
+}
+
+.content_left ul li a {
+    height: 50px;
+    display: block;
+    line-height: 50px;
+    color: gray;
+    background-color: hotpink;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    text-align: center;
+}
+
+.content_right {
+    flex: 1;
+    background-color: white;
+    position: relative;
+}
+
+.content_right ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content_right ul li {
+    width: 33.3333%;
+}
+
+.content_right ul li a {
+    width: 100%;
+    display: block;
+}
+
+.content_right ul li a img {
+    display: block;
+    /* width: 100%; */
+    /* height: 80px; */
+    width: 62px;
+    height: 62px;
+    margin: 0 auto;
+}
+
+.content_right ul li a p {
+    text-align: center;
+    color: gray;
+}

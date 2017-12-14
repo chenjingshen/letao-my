@@ -1,0 +1,65 @@
+
+.lt_content{
+    background-color: white;
+}
+/* 搜索表单 */
+.search-form{
+    padding: 10px;
+    display: flex;
+}
+.search-form input{
+    border: 1px solid #006699;
+    border-radius: 4px;
+    flex:1;
+    height: 30px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: white;
+    text-align: left;
+    font-size:12px;
+    margin-bottom: 0;
+}
+.search-form button{
+    color:white;
+    background-color: #006699;
+    border-radius: 4px;
+    width: 60px;
+    height: 30px;
+    border-color:#006699;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* 搜索历史 */
+.searh-history{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+.searh-history span{
+    font-size:12px;
+    color:gray;
+}
+.searh-history i{}
+
+/* 历史记录 */
+.history-list{
+    padding: 0 10px;
+}
+.history-list ul{}
+.history-list ul li{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 10px;
+    border:1px dashed lightgray;
+    margin-bottom: -1px;
+    align-items: center;
+}
+.history-list ul li a{
+    color:skyblue;
+    font-size:12px;
+}
+.history-list ul li span{
+    font-size:12px;
+    color:lightgray;    
+}

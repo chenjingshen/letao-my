@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 导入 字体图标的css -->
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
+    <!-- 导入mui的css -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <!-- 导入css -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/shoppingCar.css">
+</head>
+
+<body>
+    <div class="lt_container">
+        <div class="lt_header">
+            <a href="javascript:void(0)">
+                <span class="fa fa-chevron-left"></span>
+            </a>
+            <h4>购物车</h4>
+            <a href="javascript:void(0)">
+                <span class="fa fa-search"></span>
+            </a>
+        </div>
+        <div class="lt_content">
+            <ul id="OA_task_2" class="mui-table-view shop-car-list">
+
+
+            </ul>
+        </div>
+        <div class="lt_order_list">
+            <p>订单总金额:
+                <span>RMB:<i>0.00</i></span>
+            </p>
+            <button class="mui-btn mui-btn-danger">生成订单</button>
+        </div>
+        <div class="lt_footer">
+            <!-- ul>li*4>a[href="javascript:void(0)"]>span.fa.fa-home+p{首页} -->
+            <ul>
+                <li>
+                    <a href="javascript:void(0)">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./category.html">
+                        <span class="fa fa-list"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li class='active'>
+                    <a href="./shoppingCar.html">
+                        <span class="fa fa-cart-plus"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./userCenter.html">
+                        <span class="fa fa-user-plus"></span>
+                        <p>会员中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- 导入mui -->
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/mui/js/mui.min.js"></script>
+<!-- 导入模板引起 -->
+<script src="./lib/artTemplate/template.js"></script>
+<script id='car' type="text/html">
+    {{each}}
+        <li class="mui-table-view-cell mui-transitioning">
+            <div class="mui-slider-right mui-disabled">
+                <a class="mui-btn mui-btn-red">
+                    <span data-id="{{$value.id}}" class="fa fa-trash-o" style="font-size:50px;"></span>
+                </a>
+            </div>
+            <div class="mui-slider-handle mui-table">
+                <div class="mui-table-cell mui-media">
+                    <a href="javascript:;">
+                        <div class="left  mui-pull-left">
+                            <img class="mui-media-object" src="{{$value.pic[0].picAddr}}">
+                            <input style='display:block' type="checkbox">
+                        </div>
+
+                        <div class="mui-media-body">
+                            <p>{{$value.proName}}</p>
+                            <div class="price-container mui-clearfix">
+                                <span class="price mui-pull-left">{{$value.price}}</span>
+                                <span class="old-price mui-pull-left">{{$value.oldPrice}}</span>
+                                <span class="num mui-pull-right">{{$value.num}}双</span>
+                            </div>
+                            <p>鞋码:&nbsp;{{$value.size}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </li>
+    {{/each}}
+</script>
+<script src="./js/common.js"></script>
+<script src="./js/shopping.js"></script>

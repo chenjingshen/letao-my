@@ -62,6 +62,7 @@ $(function () {
                 // console.log(n);
                 // 生成li然后添加到dropdown-menu中去
                 var $li = $("<li><a data-id='" + n.id + "' href='javascript:void(0)'>" + n.categoryName + "</a></li>");
+                console.log($li);
                 // 添加到ul中
                 $('.dropdown-menu').append($li);
             })

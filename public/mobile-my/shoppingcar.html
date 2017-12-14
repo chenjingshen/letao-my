@@ -8,7 +8,8 @@
     <title>购物车</title>
 
     <!-- 引入css文件 -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" /><link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/shoppingcar.css">
@@ -39,7 +40,9 @@
                                 </div>
                                 <div class="mui-media-body ul-right">
                                     <p>匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮</p>
-                                    <span>￥499.00<del>888.00</del></span>
+                                    <span>￥499.00
+                                        <del>888.00</del>
+                                    </span>
                                     <span class="mui-pull-right">1双</span>
                                     <br>
                                     <span>鞋码：42</span>
@@ -52,7 +55,9 @@
         </div>
         <!-- 生成订单部分 -->
         <div id="order">
-            <p>订单总金额：<span>￥00.00</span></p>
+            <p>订单总金额：
+                <span>￥<i>0.00</i></span>
+            </p>
             <button type="submit">生成订单</button>
         </div>
         <div id="footer">
@@ -90,4 +95,36 @@
 <!-- 引入js文件 -->
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/mui/js/mui.min.js"></script>
+<script src="./lib/artTemplate/template.js"></script>
+<script type="text/html" id="car-tem">
+    {{each}}
+    <li class="mui-table-view-cell mui-media">
+        <div class="mui-slider-right mui-disabled">
+            <a class="mui-btn mui-btn-red">
+                <span data-id="{{$value.id}}" class="fa fa-trash-o" style="font-size:50px;"></span>
+            </a>
+        </div>
+        <div class="mui-slider-handle mui-table">
+            <div class="mui-table-cell mui-media">
+                <a href="javascript:;">
+                    <div class="ul-left mui-pull-left">
+                        <img class="mui-media-object" src="{{$value.pic[0].picAddr}}">
+                        <input type="checkbox">
+                    </div>
+                    <div class="mui-media-body ul-right">
+                        <p>{{$value.proName}}</p>
+                        <span class="price">{{$value.price}}
+                            <del>{{$value.oldPrice}}</del>
+                        </span>
+                        <span class="mui-pull-right num">{{$value.num}}双</span>
+                        <br>
+                        <span>鞋码：{{$value.size}}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</script>
 <script src="./js/common.js"></script>
+<script src="./js/shoppingcar.js"></script>

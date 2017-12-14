@@ -1,0 +1,66 @@
+/* 列表的样式 */
+.product_detail{}
+.product_detail ul{}
+.product_detail ul li{
+    min-height: 42px;
+    border-bottom: 1px solid gray;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    flex-wrap: wrap;
+}
+.product_detail ul li p{
+    font-size:18px;
+    padding: 10px 0;
+    font-weight: 900;
+}
+.product_detail ul li span{
+    font-size:16px;
+}
+.product_detail ul li span.price{
+    color:red;
+}
+.product_detail ul li span.old-price{
+    text-decoration: line-through;
+    color:gray;
+    font-size:14px;
+}
+.product_detail ul li span.size.active{
+    background-color: #006699;
+}
+
+.product_detail ul li span.size{
+    width: 25px;
+    height: 25px;
+    color:black;
+    border: 1px solid lightgray;
+    text-align: center;
+    line-height: 25px;
+    margin-right:3px;
+    font-size:12px;
+}
+.product_detail ul li span.db-num{
+    font-size:12px;
+    color:gray;
+    margin-left: 10px;
+}
+
+
+/* 底部的样式 */
+.lt_footer.product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 10px;
+    background-color: lightgray;
+}
+.lt_footer.product a{
+    font-size:14px;
+    color:deepskyblue;
+} 
+
+.lt_footer.product .right{}
+.lt_footer.product .right button{
+    margin: 2px;
+}

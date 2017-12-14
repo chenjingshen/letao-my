@@ -8,7 +8,7 @@
     <title>账户登录</title>
 
     <!-- 引入css文件 -->
-    <link rel="icon" href="favicon.ico" type="images/x-icon">
+    <link rel="shortcut icon" href="./images/bitbug_favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="./css/base.css">
@@ -30,15 +30,15 @@
             <form class="mui-input-group">
                 <div class="mui-input-row">
                     <label>用户名</label>
-                    <input type="text" class="mui-input-clear" placeholder="请输入用户名">
+                    <input name="username" type="text" class="mui-input-clear" placeholder="请输入用户名">
                 </div>
                 <div class="mui-input-row">
                     <label>密码</label>
-                    <input type="password" class="mui-input-password" placeholder="请输入密码">
+                    <input name="password" type="password" class="mui-input-password" placeholder="请输入密码">
                 </div>
                 <div class="mui-button-row">
-                    <button type="button" class="mui-btn mui-btn-primary">登录</button>
-                    <button type="button" class="mui-btn mui-btn-danger">重置</button>
+                    <button type="submit" class="mui-btn mui-btn-primary">登录</button>
+                    <button type="reset" class="mui-btn mui-btn-danger">重置</button>
                 </div>
             </form>
             <a class="content-a mui-pull-right" href="./register.html">立即注册</a>
@@ -80,3 +80,4 @@
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/mui/js/mui.min.js"></script>
 <script src="./js/common.js"></script>
+<script src="./js/login.js"></script>

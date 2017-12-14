@@ -1,0 +1,57 @@
+.lt_content{
+    background-color: transparent;
+}
+/* 列表的布局 */
+.shop-car-list{}
+.shop-car-list li{}
+.shop-car-list li{}
+.shop-car-list li .left{
+    padding: 10px;
+}
+.shop-car-list li .mui-media-body{
+    font-size:14px;
+}
+.shop-car-list li .mui-media-body p{
+    white-space:normal;
+}
+.shop-car-list li .mui-media-body .price-container{
+    padding: 8px 0;
+}
+.shop-car-list li .mui-media-body .price-container span{
+    line-height: 21px;
+}
+.shop-car-list li .mui-media-body .price-container span.price{
+    color:red;
+    font-size:13px;
+}
+.shop-car-list li .mui-media-body .price-container span.old-price{
+    color:gray;
+    text-decoration: line-through;
+    font-size:12px;
+}
+.shop-car-list li .mui-media-body .price-container span.num{
+    color:gray;
+}
+.shop-car-list li .mui-media-body p{
+    color:gray;
+}
+
+/* 底部的 总金额 */
+.lt_order_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    box-shadow: 0 0px 2px hotpink;
+}
+.lt_order_list p{
+    color:red;
+    font-size:12px;
+}
+.lt_order_list p span{}
+.lt_order_list button{
+    border-radius: 0;
+    background-color: red;
+    font-size:12px;
+    border-color: red;
+}

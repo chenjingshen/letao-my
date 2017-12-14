@@ -8,7 +8,7 @@
     <title>商品详情</title>
 
     <!-- 引入css文件 -->
-    <link rel="icon" href="favicon.ico" type="images/x-icon">
+    <link rel="shortcut icon" href="./images/bitbug_favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="./css/base.css">
@@ -149,4 +149,64 @@
 <!-- 引入js文件 -->
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/mui/js/mui.min.js"></script>
+<script src="./lib/artTemplate/template.js"></script>
+<script type="text/html" id="product-tem">
+    <!-- 轮播图 -->
+    <div id="slider" class="mui-slider">
+        <div class="mui-slider-group mui-slider-loop">
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#">
+                    <img src="{{pic[pic.length-1].picAddr}}">
+                </a>
+            </div>
+            {{each pic}}
+            <div class="mui-slider-item">
+                <a href="#">
+                    <img src="{{$value.picAddr}}">
+                </a>
+            </div>
+            {{/each}}
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#">
+                    <img src="{{pic[0].picAddr}}">
+                </a>
+            </div>
+        </div>
+        <div class="mui-slider-indicator">
+            {{each pic}}
+            <div class="mui-indicator"></div>
+            {{/each}}
+        </div>
+    </div>
+    <ul>
+        <li>
+            <p>{{proName}}</p>
+        </li>
+        <li>
+            <p>价格：
+                <span>￥{{price}}</span>
+                <del>￥{{oldPrice}}</del>
+            </p>
+        </li>
+        <li class="size-list">
+            <p>尺码：
+
+            </p>
+        </li>
+        <li>
+            <p>库存：
+                <div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='{{num}}'>
+                    <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                    <input class="mui-numbox-input" type="number" />
+                    <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                </div>
+                <span class="stock-num">剩余数量 <i>{{num}}</i>双</span>
+            </p>
+        </li>
+        <li>
+            <p>详情：{{proDesc}}</p>
+        </li>
+    </ul>
+</script>
 <script src="./js/common.js"></script>
+<script src="./js/product.js"></script>

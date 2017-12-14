@@ -1,0 +1,51 @@
+form.register-form{}
+form.register-form >div.mui-input-row{
+    padding: 10px;
+    height: auto;
+}
+form.register-form >div.mui-input-row span{
+    line-height: 40px;
+}
+
+form.register-form >div.mui-input-row:nth-child(5){
+    /* background-color: orange; */
+    display: flex;
+}
+form.register-form >div.mui-input-row:nth-child(5) input{
+    flex:1;
+}
+
+form.register-form >div.mui-input-row:nth-child(5) button{
+    width: 120px;
+    height: 40px;
+    margin: 0 10px;
+}
+form.register-form >div.mui-button-row {
+    padding: 5px;
+}
+form.register-form >div.mui-button-row >button{
+    width: 100%;
+    height: 40px;
+    font-size:18px;
+}
+
+
+form.register-form input{
+    border: 1px solid gray;
+}
+
+.form-bottom{
+    font-size:12px;
+    padding: 15px;
+    line-height: 21px;
+    
+}
+.form-bottom input{
+    margin-top: 3px;
+}
+.form-bottom span{
+    color:black;
+}
+.form-bottom a{
+    color:deepskyblue;
+}

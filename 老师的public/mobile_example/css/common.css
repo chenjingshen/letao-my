@@ -1,0 +1,164 @@
+@charset "UTF-8";
+html, body {
+  height: 100%;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*让所有图片默认都是100%*/
+img {
+  width: 100%;
+  display: block;
+}
+
+.lt_container {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+
+.lt_header {
+  width: 100%;
+  height: 45px;
+  background-color: #069;
+  position: absolute;
+  top: 0;
+}
+
+.lt_header .icon_left,
+.lt_header .icon_right {
+  height: 45px;
+  width: 45px;
+  position: absolute;
+  top: 0;
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
+}
+
+.lt_header .icon_left {
+  left: 0;
+}
+
+
+.lt_header .icon_right {
+  right: 0;
+}
+
+.lt_header h4 {
+  text-align: center;
+  color: #fff;
+  line-height: 45px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.lt_content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.lt_footer {
+  width: 100%;
+  height: 55px;
+  background-color: #069;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.lt_footer li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 10px 0;
+  color: #fff;
+}
+
+.lt_footer li.now a {
+  color: darkorange;
+}
+
+.lt_footer li.now p {
+  color: darkorange;
+}
+
+.lt_footer li a {
+  color: #fff;
+}
+
+.lt_footer li p {
+  color: #fff;
+  font-size: 12px;
+  margin: 0;
+}
+
+
+
+/*商品样式*/
+.lt_product {
+  padding: 10px;
+}
+
+.lt_product .item {
+  border: 1px solid #ccc;
+  width: 48%;
+  float: left;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.lt_product .item:nth-child(odd){
+  margin-right: 4%;
+}
+
+.lt_product .item .proName {
+  height: 40px;
+}
+
+.lt_product .item .price {
+  color: red;
+}
+
+.lt_product .item .oldPrice {
+  text-decoration: line-through;
+}
+
+
+
+/*搜索框样式*/
+.lt_search {
+  padding: 10px;
+  position: relative;
+}
+
+.lt_search input {
+  width: 100%;
+  height: 34px;
+  border: 1px solid #007aff;
+  font-size: 12px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.lt_search button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 0 5px 5px 0;
+}

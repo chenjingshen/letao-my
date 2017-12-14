@@ -8,7 +8,8 @@
     <title>商品列表</title>
 
     <!-- 引入css文件 -->
-    <link rel="icon" href="favicon.ico" type="images/x-icon"> <link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/bitbug_favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./lib/fa字体图标/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/searchlist.css">
@@ -44,12 +45,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">价格
+                                    <a class="price-option" href="javascript:void(0)">价格
                                         <span class="fa fa-angle-down"></span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">库存
+                                    <a class="num-option" href="javascript:void(0)">库存
                                         <span class="fa fa-angle-down"></span>
                                     </a>
                                 </li>
@@ -145,4 +146,24 @@
 <!-- 引入js文件 -->
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/mui/js/mui.min.js"></script>
+<script src="./lib/artTemplate/template.js"></script>
+<script type="text/html" id="searchlist-tem">
+    {{each data}}
+    <li>
+        <a href="#">
+            {{if $value.pic.length!=0}}
+                <img src="{{$value.pic[0].picAddr}}" alt="">
+            {{else}}
+                <img src="./images/none.jpg" alt=""> 
+            {{/if}}
+            <h5>{{$value.proName}}</h5>
+            <span>{{$value.price}}</span>
+            <del>{{$value.oldPrice}}</del>
+            <br>
+            <input data-id="{{$value.id}}" type="button" value="立即购买">
+        </a>
+    </li>
+    {{/each}}
+</script>
 <script src="./js/common.js"></script>
+<script src="./js/searchlist.js"></script>

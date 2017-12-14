@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 导入bootstrap的css -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!-- 导入样式 -->
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- 引入自己的css -->
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+    <!-- 边栏 -->
+    <div class="lt_aside">
+        <div class="header">
+            <h2>
+                <a href="./index.html">HEIMA</a>
+            </h2>
+        </div>
+        <div class="user">
+            <img src="./images/default.png" alt="">
+            <span>超级管理员</span>
+        </div>
+        <div class="content">
+            <ul>
+                <li class='active'>
+                    <a href="user.html">
+                        <span class='glyphicon glyphicon-user'></span>用户管理</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span class='glyphicon glyphicon-list'></span>分类管理</a>
+                    <ol>
+                        <li>
+                            <a href="first.html">一级分类</a>
+                        </li>
+                        <li>
+                            <a href="second.html">二级分类</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="products.html">
+                        <span class='glyphicon glyphicon-tags'></span>商品管理</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 主体区域 -->
+    <div class="lt_main">
+        <div class="header">
+            <a class='glyphicon glyphicon-qrcode pull-left' href="javascript:void(0)"></a>
+            <a class='glyphicon glyphicon-log-out pull-right' href="javascript:void(0)"></a>
+        </div>
+        <div class="content ">
+            <!-- 導航 -->
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">管理系统</a>
+                </li>
+                <li>
+                    用户管理
+                </li>
+            </ol>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>手机号</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>itcast</td>
+                        <td>18888888888</td>
+                        <td>正常</td>
+                        <td>
+                            <button class='btn btn-danger'>禁用</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul id='pagintor'></ul>
+        </div>
+    </div>
+    <!-- 模态框 -->
+    <div class="modal fade modal-sure" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class='text-danger'>
+                        <span class='glyphicon glyphicon-info-sign
+                        '></span> 你想清楚了?真的要走??</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-danger">确定</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</body>
+
+</html>
+<!-- 导入jq -->
+<script src="./lib/jquery/jquery.min.js"></script>
+
+<!-- 导入bs的js -->
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- 导入分页插件 -->
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<!-- echarts -->
+<script src="./lib/echarts/echarts.min.js"></script>
+<!-- 导入模板引擎 -->
+<script src="./lib/artTemplate/template.js"></script>
+<!-- 定义模板 挖坑 起名字  -->
+<script type='text/html' id='user'>
+    {{each rows}}
+        <tr>
+            <!-- 第一页   1 2 3 4 5   (1-1)*5 = 0   (1-1)*5 = 0 -->
+            <!-- 第二页   6 7 8 9 10 -->
+            <!-- 第n页    (页码-1)*页容量 +1 起始索引    (页码-1)*页容量 +1+$index   -->
+            <td>{{(page-1)*size+1+$index}}</td>
+            <td>{{$value.username}}</td>
+            <td>{{$value.mobile}}</td>
+            <td>
+                {{if $value.isDelete==0}}
+                    正常
+                {{else}}
+                    已禁用
+                {{/if}}
+            </td>
+            <td data-id="{{$value.id}}">
+                {{if $value.isDelete==0}}
+                    <button class="btn btn-danger">禁用</button>
+                {{else}}
+                    <button class="btn btn-primary">启用</button>
+                {{/if}}
+            </td>
+        </tr>
+    {{/each}}
+</script>
+<!-- 公共的js -->
+<script src="./js/common.js"></script>
+<!-- 自己的js -->
+<script src="./js/user.js"></script>

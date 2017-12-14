@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 导入 字体图标的css -->
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
+    <!-- 导入mui的css -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <!-- 导入css -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/searchList.css">
+</head>
+
+<body>
+    <div class="lt_container">
+        <div class="lt_header">
+            <a href="javascript:void(0)">
+                <span class="fa fa-home"></span>
+            </a>
+            <h4>商品列表</h4>
+            <a href="javascript:void(0)">
+                <span class="fa fa-search"></span>
+            </a>
+        </div>
+        <div class="lt_content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <!-- 结构 -->
+                    <!-- form>input[type="search"]+button -->
+                    <form class="search-form" action="">
+                        <input placeholder="请输入搜索关键字" type="search">
+                        <button>搜索</button>
+                    </form>
+                    <!-- 选项横条 -->
+                    <!-- .option-list>ul>li*4>a[href='javascript:void(0)']{选项}>span.fa.fa-angle-down -->
+                    <div class="option-list">
+                        <ul>
+                            <li class='active'>
+                                <a href="javascript:void(0)">上架时间
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="price-option" href="javascript:void(0)">价格
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="num-option" href="javascript:void(0)">库存
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">折扣
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 商品列表 -->
+                    <!-- .product-list>ul>li*5>a[href='javascript:void(0)']>img[src="./images/detail.jpg"]+p{Sport飓风 Nike Kwazi 休闲运动鞋男 844839-002-001-100-400}+span{¥499.1}+span{¥500}+button{立即购买} -->
+                    <div class="product-list">
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lt_footer">
+            <!-- ul>li*4>a[href="javascript:void(0)"]>span.fa.fa-home+p{首页} -->
+            <ul>
+                <li class='active'>
+                    <a href="javascript:void(0)">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./category.html">
+                        <span class="fa fa-list"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./shoppingCar.html">
+                        <span class="fa fa-cart-plus"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./userCenter.html">
+                        <span class="fa fa-user-plus"></span>
+                        <p>会员中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- 导入mui -->
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/mui/js/mui.min.js"></script>
+<!-- 导入模板引擎 -->
+<script src="./lib/artTemplate/template.js"></script>
+<!-- 定义模板 -->
+<script id='product' type="text/html">
+    {{each data}}
+        <li>
+            <a href="javascript:void(0)">
+                {{if $value.pic.length!=0}}
+                    <img src="{{$value.pic[0].picAddr}}" alt="">
+                {{else}}
+                    <img src="./images/none.jpg" alt="">
+                {{/if}}
+                <p>{{$value.proName}}</p>
+                <span>{{$value.price}}</span>
+                <span>{{$value.oldPrice}}</span>
+                <button data-id="{{$value.id}}">立即购买</button>
+            </a>
+        </li>
+    {{/each}}
+</script>
+<script src="./js/common.js"></script>
+<!-- 引入数据 -->
+<script src="./js/searchList.js"></script>
